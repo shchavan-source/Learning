@@ -1,0 +1,16 @@
+CREATE TABLE emp (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    dept_id INT NOT NULL
+);
+
+CREATE TABLE dept (
+    id INT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+
+ALTER TABLE emp
+ADD CONSTRAINT fk_dept_id
+FOREIGN KEY (dept_id)
+REFERENCES dept(id);
